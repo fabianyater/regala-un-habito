@@ -50,7 +50,7 @@ export const CongratsModal = ({
               <img src={HabitTracker} alt="habit-tracker" />
               <article>
                 <header>
-                  <h2>Tú hábito</h2>
+                  <h2>Tu hábito</h2>
                   <span>{currentHabit?.type}</span>
                   <p>
                     Durante las próximas semanas, recibirás recompensas
