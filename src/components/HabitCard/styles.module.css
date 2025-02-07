@@ -1,0 +1,31 @@
+.habitCard {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #f4f4f420;
+  box-sizing: border-box;
+  margin-top: 10px;
+  gap: 10px;
+  cursor: pointer;
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  span {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+}
+
+.active {
+  background-color: #cbd3f7;
+
+  h2 {
+    color: #4e5059;
+  }
+}

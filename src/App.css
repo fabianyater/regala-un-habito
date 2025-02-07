@@ -1,42 +1,168 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+.app {
+  .hero__container {
+    width: 100%;
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
+    .hero {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 720px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 1rem;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+      .hero__title {
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: bold;
+        color: #cbd3f7;
+        text-align: center;
+      }
+
+      .hero_subtitle {
+        font-size: clamp(1.275rem, 2vw, 1.5rem);
+        font-weight: 400;
+        color: #cbd3f7;
+      }
+    }
   }
-  to {
-    transform: rotate(360deg);
+
+  .main__container {
+    width: 100%;
+    margin: 2rem 0;
+
+    .section__container {
+      width: 100%;
+      max-width: 670px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 1rem;
+      margin: 0 auto;
+      gap: 2rem;
+
+      h2 {
+        font-size: clamp(1rem, 4vw, 2rem);
+        font-weight: bold;
+        color: #cbd3f7;
+        text-align: center;
+      }
+
+      .habit {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+
+        .habit__form {
+          display: flex;
+          align-items: stretch;
+          justify-content: center;
+          flex-direction: column;
+          gap: 2rem;
+          width: 100%;
+
+          .habit__type {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #cbd3f7;
+            gap: 1rem;
+            padding: 2rem;
+            border-radius: 1rem;
+          }
+
+          .habit__reward {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            border-radius: 1rem;
+            color: #1e1e1e;
+            gap: 1rem;
+
+            .reward__label {
+              font-size: 1rem;
+              font-weight: 400;
+              color: #cbd3f7;
+              text-align: left;
+              width: 100%;
+              display: flex;
+              align-items: center;
+              gap: 1rem;
+            }
+
+            .reward__empty {
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-direction: column;
+              gap: 1rem;
+              width: 100%;
+              padding: 2rem;
+              border-radius: 1rem;
+              color: #1e1e1e;
+              margin: 0 auto;
+              cursor: pointer;
+              background-color: #cbd3f740;
+              transition: background-color 0.2s ease-in-out;
+
+              svg {
+                color: #cbd3f7;
+              }
+
+              span {
+                font-size: 1.5rem;
+                font-weight: 400;
+                color: #cbd3f7;
+                text-align: center;
+              }
+
+              &:hover {
+                background-color: #cbd3f750;
+              }
+            }
+
+            .reward__list {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 1rem;
+            }
+          }
+
+          @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: center;
+          }
+        }
+      }
+      .shake {
+        animation: zumbido 0.2s ease-in-out 2;
+      }
+    }
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@keyframes zumbido {
+  0% {
+    transform: translate(0, 0);
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  25% {
+    transform: translate(-5px, -5px);
+  }
+  50% {
+    transform: translate(5px, 5px);
+  }
+  75% {
+    transform: translate(-5px, 5px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }

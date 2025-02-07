@@ -1,0 +1,55 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #cbd3f7;
+  color: #1e1e1e;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  border-radius: 1rem;
+  border: none;
+  padding: 1rem 2rem;
+  gap: 0.5rem;
+}
+
+.button__iconOnly {
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.button__iconOnly .button__icon {
+  padding: 0.5rem;
+}
+
+.button__textOnly {
+  padding: 1rem 2rem;
+}
+
+.button__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button__text {
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: #a6b6f0;
+}
+
+.button:active {
+  background-color: #6c7af0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .button {
+    background-color: #1e1e1e;
+    color: #cbd3f7;
+  }
+}

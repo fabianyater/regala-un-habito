@@ -1,0 +1,33 @@
+.select {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 10px;
+
+  font-size: 1rem;
+  font-weight: 400;
+  color: #212121;
+
+  .select__input {
+    padding: 1rem;
+    height: 50px;
+    border-radius: 5px;
+    background-color: transparent;
+    font-size: 1rem;
+    font-weight: 300;
+    border: 1px solid #212121;
+    outline: none;
+    transition: background-color 0.2s ease-in-out;
+    width: 100%;
+    color: #212121;
+    font-family: "Ubuntu", sans-serif;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url(/src/assets/chevron-down.svg);
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+  }
+}

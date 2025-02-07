@@ -1,0 +1,107 @@
+.reward__card {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  position: relative;
+
+  .reward__card__wrapper {
+    width: 211px;
+    height: 204px;
+    flex-shrink: 0;
+    border-radius: 1rem;
+    background-color: #cbd3f740;
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+
+    .reward__card__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .reward__card__day {
+        display: flex;
+        flex-direction: column;
+
+        .reward__card__text {
+          font-size: 1rem;
+          line-height: 13px;
+          color: #cbd3f7;
+        }
+
+        h2 {
+          font-size: 48px;
+          color: #cbd3f7;
+          font-weight: 900;
+          line-height: 48px;
+        }
+      }
+
+      .reward__card__emoji {
+        font-size: 45px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 100%;
+        cursor: pointer;
+      }
+    }
+
+    .reward__card__main {
+      display: flex;
+      flex-direction: column;
+      unicode-bidi: isolate;
+
+      .reward__card__title {
+        font-size: 17px;
+        line-height: 118%;
+        color: #cbd3f7;
+        width: 100%;
+      }
+
+      .reward__card__description {
+        display: flex;
+        gap: 5px;
+        max-width: 120px;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 15px;
+        letter-spacing: 0;
+        text-align: left;
+        color: #cbd3f7;
+        cursor: pointer;
+
+        span {
+          display: block;
+          max-width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  .reward__card__delete {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    background-color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    border: 2px solid transparent;
+
+    svg {
+      width: 32px;
+      height: 32px;
+      color: #fff;
+      pointer-events: none;
+    }
+  }
+}

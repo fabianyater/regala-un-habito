@@ -1,0 +1,42 @@
+.emoji__carousel {
+  overflow: hidden;
+  width: 100dvw;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .emoji__carousel__track {
+    display: flex;
+    width: max-content;
+    animation: scroll 40s linear infinite;
+
+    .emoji__carousel__item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 32px;
+      flex-shrink: 0;
+      background-color: #cbd3f740;
+      border-radius: 50px;
+      padding: 3rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+      width: 90px;
+      height: 90px;
+
+      .emoji {
+        font-size: 3rem;
+      }
+    }
+  }
+}
+
+/* ANIMACIÓN FLUIDA SIN SALTOS */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
