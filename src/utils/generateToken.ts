@@ -4,6 +4,10 @@ import { Habit, Reward } from "./types";
 const url = getLink();
 
 export const base64UrlEncode = (data: Habit) => {
+  const encodeRewards = rewardBase64UrlEncode(data.rewards);
+
+  data.rewards = encodeRewards
+
   const jsonString = JSON.stringify(data);
   const utf8Bytes = new TextEncoder().encode(jsonString);
   let base64 = "";
