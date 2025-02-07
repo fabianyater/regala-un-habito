@@ -1,6 +1,8 @@
+import { getLink } from "./getLink";
 import { Habit, Reward } from "./types";
 
-const getUrl = import.meta.env.VITE_DEV_URL || import.meta.env.VITE_PROD_URL;
+const url = getLink();
+
 export const base64UrlEncode = (data: Habit) => {
   const jsonString = JSON.stringify(data);
   const utf8Bytes = new TextEncoder().encode(jsonString);
@@ -13,7 +15,7 @@ export const base64UrlEncode = (data: Habit) => {
   base64 = btoa(base64);
 
   return (
-    `${getUrl}/regalo?habito=` +
+    `${url}/regalo?habito=` +
     base64.replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "")
   );
 };
