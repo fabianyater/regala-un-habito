@@ -1,6 +1,5 @@
 .container {
   display: flex;
-
   .left {
     padding: 1rem;
     max-width: 320px;
@@ -16,12 +15,13 @@
 
   .right {
     padding: 1rem;
-    width: 50%;
+    width: 100%;
 
     .days {
       display: grid;
-      grid-template-columns: repeat(25, 1fr);
+      grid-template-columns: repeat(auto-fill, minmax(32px, 1fr));
       gap: 10px;
+      justify-content: center;
 
       .day {
         width: 32px;
@@ -52,6 +52,26 @@
           border: 2px solid #fff;
         }
       }
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+
+    .left {
+      width: 100%;
+      max-width: 100%;
+
+      button {
+        width: 100%;
+      }
+    }
+
+    .right {
+      width: 100%;
+      padding: 1rem;
+      max-width: 100%;
     }
   }
 }

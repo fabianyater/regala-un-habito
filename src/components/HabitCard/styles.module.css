@@ -1,24 +1,44 @@
 .habitCard {
-  width: max-content;
+  min-width: 150px;
+  max-width: 200px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 1rem;
   border-radius: 1rem;
   background-color: #f4f4f420;
   box-sizing: border-box;
-  margin-top: 10px;
-  gap: 10px;
+  gap: 5px;
   cursor: pointer;
+  flex-shrink: 0;
 
   h2 {
-    font-size: 1.5rem;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
   }
 
   span {
     font-size: 1.5rem;
     font-weight: bold;
+  }
+
+  @media (max-width: 768px) {
+    min-width: 120px; 
+    max-width: 150px;
+    padding: 0.8rem;
+
+    h2 {
+      font-size: 1rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    span {
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: center;
+    }
   }
 }
 
@@ -27,5 +47,6 @@
 
   h2 {
     color: #4e5059;
+    font-weight: bold;
   }
 }

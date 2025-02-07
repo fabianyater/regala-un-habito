@@ -12,7 +12,6 @@ export const HabitGrid = () => {
   const [markedDays, setMarkedDays] = useState<Record<string, string>>({});
   const [selectedDay, setSelectedDay] = useState<string | null>(null);
   const [frozenDays, setFrozenDays] = useState<number>(0);
-  const [loading, setLoading] = useState<boolean>(true);
 
   const storeHabits = localStorage.getItem("habits");
   const habits: Habit[] = storeHabits ? JSON.parse(storeHabits) : [];
@@ -36,7 +35,6 @@ export const HabitGrid = () => {
     setMarkedDays({});
     setStreak(0);
     setFrozenDays(0);
-    setLoading(true);
 
     const savedProgress = localStorage.getItem(`habit-progress-${id}`);
 
@@ -46,8 +44,6 @@ export const HabitGrid = () => {
       setStreak(streak || 0);
       setFrozenDays(frozenDays || 0);
     }
-
-    setLoading(false);
   }, [id]);
 
   const saveProgress = (
@@ -242,34 +238,30 @@ export const HabitGrid = () => {
           />
         </aside>
         <section className={styles.right}>
-          {loading ? (
-            <p>Cargando...</p>
-          ) : (
-            <div className={styles.days}>
-              {Array.from({ length: totalDays }, (_, i) => {
-                const date = new Date();
-                date.setDate(new Date().getDate() + i);
-                const dateString = date.toISOString().split("T")[0];
-                const status = markedDays[dateString] || "unmarked";
+          <div className={styles.days}>
+            {Array.from({ length: totalDays }, (_, i) => {
+              const date = new Date();
+              date.setDate(new Date().getDate() + i);
+              const dateString = date.toISOString().split("T")[0];
+              const status = markedDays[dateString] || "unmarked";
 
-                let dayStyle = styles.unmarked;
-                if (status === "completed") dayStyle = styles.completed;
-                if (status === "frozen") dayStyle = styles.frozen;
-                if (goalDates.includes(dateString)) dayStyle = styles.goal;
+              let dayStyle = styles.unmarked;
+              if (status === "completed") dayStyle = styles.completed;
+              if (status === "frozen") dayStyle = styles.frozen;
+              if (goalDates.includes(dateString)) dayStyle = styles.goal;
 
-                return (
-                  <div
-                    key={dateString}
-                    className={`${styles.day} ${dayStyle} ${
-                      selectedDay === dateString ? styles.selected : ""
-                    }`}
-                    onClick={() => handleSelectDay(dateString)}
-                    title={goalDates.includes(dateString) ? "Objetivo 🎯" : ""}
-                  ></div>
-                );
-              })}
-            </div>
-          )}
+              return (
+                <div
+                  key={dateString}
+                  className={`${styles.day} ${dayStyle} ${
+                    selectedDay === dateString ? styles.selected : ""
+                  }`}
+                  onClick={() => handleSelectDay(dateString)}
+                  title={goalDates.includes(dateString) ? "Objetivo 🎯" : ""}
+                ></div>
+              );
+            })}
+          </div>
         </section>
       </div>
     </>
